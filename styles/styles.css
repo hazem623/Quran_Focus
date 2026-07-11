@@ -1,0 +1,112 @@
+/* ===========================
+   Reset
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ===========================
+   Body
+=========================== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden; 
+    min-height: 100vh;
+    color: white;
+}
+/* ===========================
+   Background Video
+=========================== */
+.background-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+/* ===========================
+   Dark Overlay
+=========================== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.50);
+    z-index: -1;
+}
+/* ===========================
+   Main Container
+=========================== */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+/* ===========================
+   Glass Card
+=========================== */
+.card {
+    width: 420px;
+    max-width: 95%;
+    padding: 30px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 8px 32px rgba(0,0,0,.50);
+}
+/* ===========================
+   Title
+=========================== */
+.card h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    transition: all .3s;
+}
+.card h1:hover {
+    color: #00ffea;
+    cursor: pointer;
+}
+/* ===========================
+   Description
+=========================== */
+.card p {
+    text-align: center;
+    opacity: .5;
+    margin-bottom: 25px;
+    transition: all .3s;
+}
+.card p:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+/* ===========================
+   Buttons
+=========================== */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    background: rgba(255,255,255,.15);
+    color: white;
+    transition: .3s;
+}
+button:hover {
+
+    background: rgba(255,255,255,.25);
+
+}
+.audio {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 12px;
+    filter: brightness(0.9);
+}
