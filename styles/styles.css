@@ -6,15 +6,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ===========================
+   Variables
+=========================== */
+:root {
+    --glass: rgba(255, 255, 255, 0.08);
+    --glass-btn: rgba(255, 255, 255, 0.15);
+    --glass-hover: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.15);
+
+    --text: #ffffff;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
 /* ===========================
    Body
 =========================== */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden; 
+    color: var(--text);
     min-height: 100vh;
-    color: white;
+    overflow-x: hidden;
 }
+
 /* ===========================
    Background Video
 =========================== */
@@ -26,87 +41,302 @@ body {
     object-fit: cover;
     z-index: -2;
 }
+
 /* ===========================
-   Dark Overlay
+   Overlay
 =========================== */
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.50);
+    background: rgba(0, 0, 0, .5);
     z-index: -1;
 }
+
 /* ===========================
    Main Container
 =========================== */
 .container {
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 20px;
 }
+
 /* ===========================
    Glass Card
 =========================== */
 .card {
+
     width: 420px;
     max-width: 95%;
+
     padding: 30px;
+
     border-radius: 25px;
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.15);
+
+    background: var(--glass);
+
+    border: 1px solid var(--glass-border);
+
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    box-shadow: 0 8px 32px rgba(0,0,0,.50);
+
+    box-shadow: var(--shadow);
+
+    transition: .3s;
 }
+
 /* ===========================
    Title
 =========================== */
 .card h1 {
+
     text-align: center;
     margin-bottom: 15px;
+
     font-size: 2rem;
-    transition: all .3s;
+
+    transition: .3s;
+
 }
+
 .card h1:hover {
+
     color: #00ffea;
-    cursor: pointer;
+
 }
+
 /* ===========================
-   Description
+   Paragraph
 =========================== */
 .card p {
+
     text-align: center;
-    opacity: .5;
-    margin-bottom: 25px;
-    transition: all .3s;
+
+    opacity: .6;
+
+    margin-bottom: 20px;
+
+    transition: .3s;
+
 }
+
 .card p:hover {
+
     opacity: 1;
-    cursor: pointer;
+
 }
+
+/* ===========================
+   Selected Surah Name
+=========================== */
+.surah-name {
+
+    color: #00ffea;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+
+    min-height: 22px;
+
+}
+
 /* ===========================
    Buttons
 =========================== */
 button {
+
     width: 100%;
+
     padding: 14px;
+
     border: none;
+
     border-radius: 12px;
+
     cursor: pointer;
-    font-size: 16px;
-    background: rgba(255,255,255,.15);
+
+    background: var(--glass-btn);
+
     color: white;
+
+    font-size: 16px;
+
     transition: .3s;
+
 }
+
 button:hover {
+
+    background: var(--glass-hover);
+
+    transform: translateY(-2px);
+
+}
+
+/* ===========================
+   Audio
+=========================== */
+.audio {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    border-radius: 12px;
+
+    opacity: .95;
+
+}
+
+/* ===========================
+   Player Controls
+=========================== */
+.player-controls {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 25px;
+
+}
+
+.player-controls i {
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.08);
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    transition: .3s;
+
+}
+
+.player-controls i:hover {
 
     background: rgba(255,255,255,.25);
 
+    color: #00ffea;
+
+    transform: scale(1.08);
+
 }
-.audio {
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 12px;
-    filter: brightness(0.9);
+
+/* ===========================
+   Change Background Button
+=========================== */
+.butVid {
+
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: auto;
+
+    padding: 14px 22px;
+
+    border-radius: 14px;
+
+    border: none;
+
+    background: var(--glass-btn);
+
+    color: white;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: var(--shadow);
+
+    transition: .3s;
+
+}
+
+.butVid:hover {
+
+    background: var(--glass-hover);
+
+    transform: translateY(-3px);
+
+}
+
+/* ===========================
+   Video Transition
+=========================== */
+.fade-out {
+
+    opacity: 0;
+
+    filter: blur(8px);
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 768px) {
+
+    .card {
+
+        width: 95%;
+
+        padding: 25px;
+
+    }
+
+    .card h1 {
+
+        font-size: 1.7rem;
+
+    }
+
+    .player-controls {
+
+        gap: 12px;
+
+    }
+
+    .player-controls i {
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+
+    }
+
+    .butVid {
+
+        right: 15px;
+        bottom: 15px;
+
+        font-size: 14px;
+
+        padding: 12px 18px;
+
+    }
+
 }

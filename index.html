@@ -1,24 +1,36 @@
-<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quran_Focus</title>
+    <title>Quran Focus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <video class="background-video" autoplay muted loop playsinline>
         <source src="video/first_video.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو.
     </video>
     <div class="overlay"></div>
     <main class="container"> 
-
         <div class="card">
-            <h1>Quran Focus</h1>
-            <p>استمع للقرآن الكريم في أجواء هادئة.</p>
-            <button>ابدأ الاستماع</button>
-            <div class="io"></div>
-        </div>
+
+    <h1>Quran Focus</h1>
+
+    <p class="surah-name"></p>
+
+    <p>استمع للقرآن الكريم في أجواء هادئة.</p>
+
+    <button>ابدأ الاستماع</button>
+    <div class="player-controls">
+    <i class="fa-solid fa-play"></i>
+    <i class="fa-solid fa-pause"></i>
+    <i class="fa-solid fa-volume-high"></i>
+    <i class="fa-solid fa-volume-xmark"></i>
+</div>
+    <div class="io"></div>
+
+</div>
     </main>
     <script src="main.js"></script>
 </body>
