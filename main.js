@@ -216,3 +216,4 @@ volumeBtn.addEventListener("click", () => {
     audio.muted = false;
 
 });
+
